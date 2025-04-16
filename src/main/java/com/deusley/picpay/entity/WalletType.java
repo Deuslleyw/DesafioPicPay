@@ -1,9 +1,8 @@
 package com.deusley.picpay.entity;
 
+import com.deusley.picpay.enums.TypeEnum;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @AllArgsConstructor
@@ -16,24 +15,8 @@ public class WalletType {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String description;
-
-    @AllArgsConstructor
-    public enum enuns{
-
-        USER(1L, "user"),
-        MERCHANT(2L, "merchant");
-
-
-        private final Long id;
-        private final String description;
-
-        private WalletType get(){
-            return new WalletType(id, description);
-        }
-
-
-    }
-
-
+    private TypeEnum typeEnum;
 
 }
+
+
