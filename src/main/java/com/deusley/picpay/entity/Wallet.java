@@ -1,5 +1,7 @@
 package com.deusley.picpay.entity;
 
+import com.deusley.picpay.enums.TypeEnum;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,10 +27,9 @@ public class Wallet {
     @Column(unique = true)
     private String email;
 
+    @JsonIgnore
     private String password;
     private BigDecimal balance = BigDecimal.ZERO;
 
-    @ManyToOne
-    @JoinColumn(name = "wallet_type_id")
-    private WalletType walletType;
+    private TypeEnum walletType;
 }

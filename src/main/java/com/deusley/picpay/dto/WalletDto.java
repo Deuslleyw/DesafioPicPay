@@ -1,6 +1,6 @@
 package com.deusley.picpay.dto;
 
-import com.deusley.picpay.entity.WalletType;
+import com.deusley.picpay.enums.TypeEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,7 +15,7 @@ public class WalletDto {
     private String cpfCnpj;
     private String email;
     private String password;
-    private WalletType walletType;
+    private TypeEnum walletType;
 }
 
 
