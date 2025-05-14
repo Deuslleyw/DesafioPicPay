@@ -3,11 +3,12 @@ package com.deusley.picpay.service.impl;
 import com.deusley.picpay.clients.AuthorizationClient;
 import com.deusley.picpay.entity.Transfer;
 import com.deusley.picpay.service.AuthorizationsService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AuthorizationsServiceImpl implements AuthorizationsService {
 
-    @Autowired
+
     private final AuthorizationClient authorizationClient;
 
     public AuthorizationsServiceImpl(AuthorizationClient authorizationClient) {
