@@ -13,7 +13,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class transfer {
+public class Transfer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
