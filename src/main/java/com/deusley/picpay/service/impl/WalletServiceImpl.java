@@ -21,7 +21,13 @@ public class WalletServiceImpl implements WalletService {
     @Override
     public Wallet create(WalletDto walletDto) {
 
+        var foundWallet = walletRepository.findByCpfCnpjOrEmail(walletDto.getCpfCnpj(), walletDto.getEmail());
+        if(foundWallet.isPresent()){
+            throw new RuntimeException("CARTEIRA JA EXISTE");
+        }
+        else {
+
         var convertedWallet = walletMapper.toWallet(walletDto);
         return walletRepository.save(convertedWallet);
     }
-}
+}}
