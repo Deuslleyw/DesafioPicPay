@@ -1,11 +1,11 @@
 package com.deusley.picpay.service;
 
 
-import com.deusley.picpay.entity.Transfer;
+import com.deusley.picpay.dto.TransferDto;
 
 public interface AuthorizationsService {
 
-    public boolean isAuthorized(Transfer transfer);
+    public boolean isAuthorized(TransferDto transfer);
 
 
 
