@@ -19,7 +19,9 @@ public class TransferController {
     @PostMapping("/transfer")
     public ResponseEntity<Transfer> transfer(@RequestBody @Valid TransferDto transferDto){
 
-        return null;
+        var response = transferService.transfer(transferDto);
+
+        return ResponseEntity.ok(response);
 
 
     }
