@@ -33,10 +33,11 @@ public class Wallet {
     private String password;
     private BigDecimal balance = BigDecimal.ZERO;
 
+    @Enumerated(EnumType.STRING)
     private TypeEnum walletType;
 
     public boolean isTransferAllowedForWalletType() {
-        return this.walletType.equals(TypeEnum.USER);
+        return TypeEnum.USER.equals(this.walletType);
 
     }
 
