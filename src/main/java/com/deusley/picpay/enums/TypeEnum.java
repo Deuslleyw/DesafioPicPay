@@ -2,8 +2,8 @@ package com.deusley.picpay.enums;
 
 public enum TypeEnum {
 
-    USER(1L, "USER"),
-    MERCHANT(2L, "MERCHANT");
+    USER(0L, "USER"),
+    MERCHANT(1L, "MERCHANT");
 
     private final String description;
 

@@ -58,16 +58,15 @@ public class TransferServiceImpl implements TransferService {
 
     private void validateTransfer(TransferDto transferDto, Wallet sender) {
 
-        if(!sender.isTransferAllowedForWalletType()){
+        if(sender.isTransferAllowedForWalletType()){
             throw new RuntimeException("Transferencia Não Permitida (TransferNotAllowedForWalletType)");
         }
-        if(!sender.isBalancerEqualOrGreatherThan(transferDto.value())){
+        if(sender.isBalancerEqualOrGreatherThan(transferDto.value())){
             throw new RuntimeException("InsufficientBalance  (Saldo Insuficiente)");
 
         }
-        if(!authorizationsService.isAuthorized(transferDto)){
-            throw new RuntimeException("Transfer not authorized");
-        }
+        if(authorizationsService.isAuthorized(transferDto)){
+            throw new RuntimeException("Transfer not authorized");     }
 
     }
 }
